@@ -1,0 +1,94 @@
+{
+        "id": "amber",
+        "name": "Amber",
+        "element": "Pyro",
+        "weapon": "Bow",
+        "rarity": 4,
+        "region": "Mondstadt",
+        "birthdat": "August 10",
+        "description": "A perky, straightforward girl who is also the only remaining Outrider of the Knights of Favonius.",
+        "images": {
+            "icon": "",
+            "splash": ""
+        },
+        "stats": {
+            "hp": {
+                "base": 1030,
+                "level_90": 13226
+            },
+            "atk": {
+                "base": 20,
+                "level_90": 251
+            },
+            "def": {
+                "base": 68,
+                "level_90": 876
+            }
+        },
+        "ascension": {
+            "stat": "ATK",
+            "material_id": "agnidus-agate",
+            "local_specialty_id": "small-lamp-grass",
+            "boss_material_id": "everflame-seed"
+        },
+        "talents": {
+            "normal_attack": {
+                "name": "Sharpshooter",
+                "description": ""
+            },
+            "elemental_skill": {
+                "name": "Explosive Puppet",
+                "description": ""
+            },
+            "elemental_burst": {
+                "name": "Fiery Rain",
+                "description": ""
+            }
+        },
+        "passive_talents": [
+            {
+                "name": "Gliding Champion",
+                "description": ""
+            },
+            {
+                "name": "Every Arrow Finds Its Target",
+                "description": ""
+            },
+            {
+                "name": "Precise Shot",
+                "description": ""
+            }
+        ],
+        "constellation": [
+            {
+                "level": 1,
+                "name": "One Arrow to Rule Them All",
+                "description": ""
+            },
+            {
+                "level": 2,
+                "name": "Bunny Triggered",
+                "description": ""
+            },
+            {
+                "level": 3,
+                "name": "It Burns!",
+                "description": ""
+            },
+            {
+                "level": 4,
+                "name": "It's Not Just Any Doll...",
+                "description": ""
+            },
+            {
+                "level": 5,
+                "name": "It's Baron Bunny!",
+                "description": ""
+            },
+            {
+                "level": 6,
+                "name": "Wildfire",
+                "description": ""
+            }
+        ]
+    }

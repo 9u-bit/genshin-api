@@ -1,0 +1,94 @@
+{
+        "id": "albedo",
+        "name": "Albedo",
+        "element": "Geo",
+        "weapon": "Sword",
+        "rarity": 5,
+        "region": "Mondstadt",
+        "birthdat": "September 13",
+        "description": "A mysterious alchemist who serves as the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
+        "images": {
+            "icon": "",
+            "splash": ""
+        },
+        "stats": {
+            "hp": {
+                "base": 1030,
+                "level_90": 13226
+            },
+            "atk": {
+                "base": 20,
+                "level_90": 251
+            },
+            "def": {
+                "base": 68,
+                "level_90": 876
+            }
+        },
+        "ascension": {
+            "stat": "Geo DMG Bonus",
+            "material_id": "prithiva-topaz",
+            "local_specialty_id": "cecilia",
+            "boss_material_id": "basalt-pillar"
+        },
+        "talents": {
+            "normal_attack": {
+                "name": "Favonius Bladework - Weiss",
+                "description": ""
+            },
+            "elemental_skill": {
+                "name": "Abiogenesis: Solar Isotama",
+                "description": ""
+            },
+            "elemental_burst": {
+                "name": "Rite of Progeniture: Tectonic Tide",
+                "description": ""
+            }
+        },
+        "passive_talents": [
+            {
+                "name": "Calcite Might",
+                "description": ""
+            },
+            {
+                "name": "Homocular Nature",
+                "description": ""
+            },
+            {
+                "name": "Flash of Genius",
+                "description": ""
+            }
+        ],
+        "constellation": [
+            {
+                "level": 1,
+                "name": "Flower of Eden",
+                "description": ""
+            },
+            {
+                "level": 2,
+                "name": "Opening of Phanerozoic",
+                "description": ""
+            },
+            {
+                "level": 3,
+                "name": "Grace of Helios",
+                "description": ""
+            },
+            {
+                "level": 4,
+                "name": "Descent of Divinity",
+                "description": ""
+            },
+            {
+                "level": 5,
+                "name": "Tide of Hadean",
+                "description": ""
+            },
+            {
+                "level": 6,
+                "name": "Dust of Purification",
+                "description": ""
+            }
+        ]
+    }
