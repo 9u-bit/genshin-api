@@ -1,5 +1,9 @@
 const express = require("express");
 const {getAllCharacters, getCharacterById} = require("../services/characterService");
+const {getMaterialById} = require("../services/materialService");
+const {getAllRegions, getRegionById} = require("../services/regionService");
+const {getAllElements, getElementById} = require("../services/elementService");
+const {getAllWeapons, getWeaponById} = require("../services/weaponService");
 const router = express.Router();
 
 // GET all characters + filters
@@ -15,9 +19,8 @@ router.get("/", (req, res) => {
 
     // Element
     if (req.query.element) {
-        const validElements = ["anemo", "geo", "electro", "dendro", "hydro", "pyro", "cryo"];
-
         const element = req.query.element.toLowerCase();
+        const validElements = getAllElements().map((element) => element.id);
 
         if (!validElements.includes(element)) {
             return res.status(400).json({
@@ -27,25 +30,24 @@ router.get("/", (req, res) => {
         }
 
         results = results.filter(
-            (character) => character.element.toLowerCase() === element
+            (character) => character.element_id.toLowerCase() === element
         );
     }
 
     // Weapon
     if (req.query.weapon) {
-        const validWeapon = ["sword", "claymore", "polearm", "bow", "catalyst"];
-
         const weapon = req.query.weapon.toLowerCase();
+        const validWeapons = getAllWeapons().map((weapon) => weapon.id);
 
-        if (!validWeapon.includes(weapon)) {
+        if (!validWeapons.includes(weapon)) {
             return res.status(400).json({
                 error: "Invalid weapon",
-                validWeapon: validWeapon
+                validWeapons: validWeapons
             });
         }
 
         results = results.filter(
-            (character) => character.weapon.toLowerCase === weapon
+            (character) => character.weapon_id.toLowerCase() === weapon
         );
     }
 
@@ -64,6 +66,24 @@ router.get("/", (req, res) => {
         )
     }
 
+    // Region
+
+    if (req.query.region) {
+        const region = req.query.region.toLowerCase();
+        const validRegions = getAllRegions().map((region) => region.id);
+
+        if (!validRegions.includes(region)) {
+            return res.status(400).json({
+                error: "Invalid region",
+                validRegions: validRegions
+            });
+        }
+
+        results = results.filter(
+            (character) => character.region_id.toLowerCase() === region
+        );
+    }
+
     // Name
     if (req.query.name) {
         results = results.filter(
@@ -75,16 +95,15 @@ router.get("/", (req, res) => {
     // Pagination results
     const paginatedResults = results.slice(startIndex, endIndex);
 
-
     // Character summaries
     const summaries = paginatedResults.map((character) => ({
         id: character.id,
         name: character.name,
         title: character.title,
-        element: character.element,
-        weapon: character.weapon,
+        element_id: character.element_id,
+        weapon_id: character.weapon_id,
         rarity: character.rarity,
-        region: character.region,
+        region_id: character.region_id,
         birthday: character.birthday,
         images: character.images
     }));
@@ -107,8 +126,21 @@ router.get("/:id", (req, res) => {
         });
     }
 
+    const characterWithMaterials = {
+        ...character,
+        element: getElementById(character.element_id),
+        weapon: getWeaponById(character.weapon_id),
+        region: getRegionById(character.region_id),
+        ascension: {
+            ...character.ascension,
+            material: getMaterialById(character.ascension.material_id),
+            local_specialty: getMaterialById(character.ascension.local_specialty_id),
+            boss_material: getMaterialById(character.ascension.boss_material_id)
+        }
+    };
+
     res.json({
-        data: character,
+        data: characterWithMaterials,
         meta: {
             type: "character",
             id: character.id

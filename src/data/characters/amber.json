@@ -1,10 +1,10 @@
 {
         "id": "amber",
         "name": "Amber",
-        "element": "Pyro",
-        "weapon": "Bow",
+        "element_id": "pyro",
+        "weapon_id": "bow",
         "rarity": 4,
-        "region": "Mondstadt",
+        "region_id": "mondstadt",
         "birthdat": "August 10",
         "description": "A perky, straightforward girl who is also the only remaining Outrider of the Knights of Favonius.",
         "images": {

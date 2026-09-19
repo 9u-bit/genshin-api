@@ -1,10 +1,10 @@
 {
         "id": "albedo",
         "name": "Albedo",
-        "element": "Geo",
-        "weapon": "Sword",
+        "element_id": "geo",
+        "weapon_id": "sword",
         "rarity": 5,
-        "region": "Mondstadt",
+        "region_id": "mondstadt",
         "birthdat": "September 13",
         "description": "A mysterious alchemist who serves as the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
         "images": {

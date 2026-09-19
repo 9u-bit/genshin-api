@@ -1,7 +1,5 @@
 const express = require("express");
-
 const {getAllMaterials, getMaterialById} = require("../services/materialService");
-
 const router = express.Router();
 
 // GET all materials

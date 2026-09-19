@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const materialDirectory = path.join(__dirname, "../data/materials");
+const materialsDirectory = path.join(__dirname, "../data/materials");
 
 function getAllMaterials() {
     return fs
